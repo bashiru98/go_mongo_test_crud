@@ -19,7 +19,7 @@ type (
 )
 
 const (
-	DB_NAME       = "bashiru"
+	DB_NAME       = "demo_db"
 	DB_COLLECTION = "users"
 )
 
@@ -97,6 +97,12 @@ func (uc UserController) GetUser(c *gin.Context) {
 
 	c.Writer.Header().Set("Content-Type", "application/json")
 	c.JSON(200, u)
+}
+
+func (uc UserController) Hello(c *gin.Context) {
+	c.Writer.Header().Set("Content-Type", "application/json")
+
+	c.JSON(200, gin.H{"result": "ok"})
 }
 
 // CreateUser creates a new user resource

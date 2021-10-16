@@ -18,7 +18,7 @@ func main() {
 	router.DELETE("/users/:id", uc.RemoveUser)
 	router.POST("/users", uc.CreateUser)
 	router.PUT("/users/:id", uc.UpdateUser)
-
+	router.GET("/test", uc.Hello)
 	router.Run(":8000")
 }
 
